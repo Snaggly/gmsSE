@@ -9,7 +9,7 @@ public class AUDO implements IType{
 	private String fileName = "";
 
 	//Assuming GMS takes wave files for AUDO. Please correct me if I'm wrong
-	private const String suffix = ".wav";
+	private String suffix = ".wav";
 	private LinkedList<Integer> offsets = new LinkedList<Integer>();
 
 	//Public constructors
