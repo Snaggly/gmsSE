@@ -16,10 +16,9 @@ public class Extractor<T extends IType> {
 	}
 	
 	//Getting length and extracting data into an Output Stream from each offset
-	//Assuming uncompressed wave files have been packed...
 	public void extract() throws IOException {
 		for (int i=0; i < type.getChunkCount(); i++) {
-			String outputPath = outputDir+"/"+i+".wav";
+			String outputPath = outputDir+"/"+i+type.getFileName();
 			int currentOffset = type.getOffsets().get(i);
 			Logger.print("Extracting from " + inputFile + "@" + currentOffset + " to " + outputPath);
 			FileOutputStream fos = new FileOutputStream(outputPath);

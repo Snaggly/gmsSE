@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 public interface IType {
 	public String getType();
+	public String getFileName();
 	public int getChunkSize();
 	public int getChunkCount();
 	public void setChunkSize(int value);

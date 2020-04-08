@@ -2,13 +2,31 @@ package snaggly;
 import java.util.LinkedList;
 
 public class AUDO implements IType{
+
+	//Private fields
+	private int chunkSize;
+	private int chunkCount;
+	private String fileName = "";
+
+	//Assuming GMS takes wave files for AUDO. Please correct me if I'm wrong
+	private const String suffix = ".wav";
+	private LinkedList<Integer> offsets = new LinkedList<Integer>();
+
+	//Public constructors
+	public AUDO(){}
+
+	public AUDO(String fileName){
+		this.fileName = fileName;
+	}
+
+	//Public methods
 	public final String getType() {
 		return "AUDO";
 	}
 	
-	private int chunkSize;
-	private int chunkCount;
-	private LinkedList<Integer> offsets = new LinkedList<Integer>();
+	public String getFileName() {
+		return fileName + suffix;
+	}
 
 	public int getChunkSize() {
 		return chunkSize;
